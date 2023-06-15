@@ -1,12 +1,8 @@
 {{
-  config(
-    materialized='View'
-  )
+    config(
+        materialized='View'
+    )
 }}
-with source as (
-    select * from {{ source('KENVUE', 'raw_data_pacvue') }}
-),
-Renamed as (
 
 select 
  ID
@@ -85,6 +81,5 @@ select
 ,VIEWATTRIBUTEDUNITSORDEREDNEWTOBRAND14D
 ,REPORT_DATE_TIME
 ,CLIENT_ID	
-from source
-)
-select * from Renamed
+from 
+SANDBOX_CONSUMER360_ECOMMERCE.PACVUE_RAW.RAW_DATA_PACVUE
